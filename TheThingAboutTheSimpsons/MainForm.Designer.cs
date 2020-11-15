@@ -28,11 +28,11 @@
             this.aboutUsBtn = new System.Windows.Forms.Label();
             this.ourMissionBtn = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.episodeViewer1 = new TheThingAboutTheSimpsons.EpisodeViewer();
             this.pokemonBtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.episodeViewer1 = new TheThingAboutTheSimpsons.EpisodeViewer();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,23 +76,12 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(196, 48);
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(216, 48);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(341, 45);
+            this.pictureBox1.Size = new System.Drawing.Size(321, 45);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
-            // 
-            // episodeViewer1
-            // 
-            this.episodeViewer1.BackColor = System.Drawing.Color.Transparent;
-            this.episodeViewer1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("episodeViewer1.BackgroundImage")));
-            this.episodeViewer1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.episodeViewer1.Location = new System.Drawing.Point(12, 344);
-            this.episodeViewer1.Name = "episodeViewer1";
-            this.episodeViewer1.Size = new System.Drawing.Size(384, 235);
-            this.episodeViewer1.TabIndex = 13;
-            this.episodeViewer1.Visible = false;
             // 
             // pokemonBtn
             // 
@@ -133,6 +122,17 @@
             this.button3.Text = "Load Southpark";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // episodeViewer1
+            // 
+            this.episodeViewer1.BackColor = System.Drawing.Color.Transparent;
+            this.episodeViewer1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("episodeViewer1.BackgroundImage")));
+            this.episodeViewer1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.episodeViewer1.Location = new System.Drawing.Point(12, 344);
+            this.episodeViewer1.Name = "episodeViewer1";
+            this.episodeViewer1.Size = new System.Drawing.Size(384, 235);
+            this.episodeViewer1.TabIndex = 13;
+            this.episodeViewer1.Visible = false;
             // 
             // MainForm
             // 
