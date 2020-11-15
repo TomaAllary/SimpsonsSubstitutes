@@ -32,11 +32,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.episodeViewer1 = new TheThingAboutTheSimpsons.EpisodeViewer();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.whoLb = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // submitBtn
@@ -131,35 +127,16 @@
             this.episodeViewer1.TabIndex = 13;
             this.episodeViewer1.Visible = false;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.whoLb);
-            this.panel1.Location = new System.Drawing.Point(1, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(574, 112);
-            this.panel1.TabIndex = 20;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(372, 60);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(199, 49);
-            this.pictureBox1.TabIndex = 21;
-            this.pictureBox1.TabStop = false;
-            // 
             // whoLb
             // 
             this.whoLb.AutoSize = true;
             this.whoLb.BackColor = System.Drawing.Color.Transparent;
             this.whoLb.Font = new System.Drawing.Font("Snap ITC", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.whoLb.ForeColor = System.Drawing.Color.Gold;
-            this.whoLb.Location = new System.Drawing.Point(11, 7);
+            this.whoLb.Location = new System.Drawing.Point(3, 6);
             this.whoLb.Name = "whoLb";
             this.whoLb.Size = new System.Drawing.Size(322, 49);
-            this.whoLb.TabIndex = 20;
+            this.whoLb.TabIndex = 21;
             this.whoLb.Text = "The Simpsons";
             // 
             // MainForm
@@ -170,7 +147,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1092, 722);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.whoLb);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -184,9 +161,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "simpsonComparator";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,8 +175,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label whoLb;
     }
 }
