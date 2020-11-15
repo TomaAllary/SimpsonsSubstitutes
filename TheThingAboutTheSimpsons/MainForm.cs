@@ -16,6 +16,9 @@ namespace TheThingAboutTheSimpsons {
 
         Dictionary<string, string> charactersSubdtitutes = new Dictionary<string, string>();
 
+        CharactersSet SimpsonsCharacters;
+        CharactersSet SubstituteCharacters;
+
         Episode episode;
         private int episodeIt;
         private Point position = new Point();
@@ -55,7 +58,7 @@ namespace TheThingAboutTheSimpsons {
             }
 
             Random rnd = new Random();
-            episode = episodes[rnd.Next(0, episodes.Count)];
+            episode = episodes[rnd.Next(0, episodes.Count - 1)];
         }
 
         public void LoadCharactersSet(string setName) {
@@ -64,10 +67,33 @@ namespace TheThingAboutTheSimpsons {
 
         private void submitBtn_Click(object sender, EventArgs e) {
             LoadRdmEpisode();
+            ChangeCharacters();
         }
 
-        public void SubtitutesCharacters() {
+        public void ChangeCharacters() {
+            if (SubstituteCharacters == null)
+                SubstituteCharacters = SimpsonsCharacters;
 
+            foreach(string name in SimpsonsCharacters.charactersName) {
+                if (episode.summary.Contains(name)) {
+                    //random substitute
+                    if (!charactersSubdtitutes.ContainsKey(name)) {
+                        Random rnd = new Random();
+                        charactersSubdtitutes.Add(name, SubstituteCharacters.charactersName[rnd.Next(0, SubstituteCharacters.charactersName.Count - 1)]);
+                    }
+                    episode.summary.Replace(name, charactersSubdtitutes[name]);
+
+                }
+                if (episode.summary.Contains(name + "'s")) {
+                    //random substitute
+                    if (!charactersSubdtitutes.ContainsKey(name)) {
+                        Random rnd = new Random();
+                        charactersSubdtitutes.Add(name, SubstituteCharacters.charactersName[rnd.Next(0, SubstituteCharacters.charactersName.Count - 1)]);
+                    }
+                    episode.summary.Replace(name + "'s", charactersSubdtitutes[name] + "'s");
+
+                }
+            }
         }
 
         private void aboutUsBtn_Click(object sender, EventArgs e)
@@ -90,113 +116,15 @@ namespace TheThingAboutTheSimpsons {
             this.Location = position;
         }
 
-        public void showResults() {
-            
-
-            if (episodesFounds.Count > 0) {
-                resultPanel.Visible = true;
-                showEpisode(episodesFounds[0]);
-                episodeIt = 0;
-                label1.Text = "Yup, They d'OH it!";
-                label1.BackColor = Color.Green;
-            }
-            else {
-                resultPanel.Visible = false;
-
-                label1.Text = "No similar episode :(";
-                label1.BackColor = Color.Red;
-            }
+        private void showEpisode() {
+            episodeViewer1.Title.Text = episode.Title;
+            episodeViewer1.episodeNbLb.Text = "Episode #" + episode.EpisodeNb.ToString();
+            episodeViewer1.seasonNbLb.Text = "Season #" + episode.Season.ToString();
+            episodeViewer1.dateLb.Text = episode.Date;
+            episodeViewer1.summaryLb.Text = episode.summary;
         }
 
-        private void showEpisode(Episode ep) {
-            episodeViewer1.Title.Text = ep.Title;
-            episodeViewer1.episodeNbLb.Text = "Episode #" + ep.EpisodeNb.ToString();
-            episodeViewer1.seasonNbLb.Text = "Season #" + ep.Season.ToString();
-            episodeViewer1.dateLb.Text = ep.Date;
-            episodeViewer1.summaryLb.Text = "";
-            foreach(string x in ep.summary) {
-                episodeViewer1.summaryLb.Text += " " + x;
-            }         
-            MessageBox.Show(ep.ToString() + ":" + ep.Score.ToString());
-            ;
-        }
 
-        private void nextBtn_Click(object sender, EventArgs e) {
-            if (episodeIt < episodesFounds.Count - 1) {
-                episodeIt++;
-                showEpisode(episodesFounds[episodeIt]);
-            }
-        }
 
-        private void prevBtn_Click(object sender, EventArgs e) {
-            if (episodeIt > 0) {
-                episodeIt--;
-                showEpisode(episodesFounds[episodeIt]);
-            }
-        }
-
-        private void MainForm_Resize(object sender, EventArgs e)
-        {
-        
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            string path = Directory.GetCurrentDirectory() + "\\" +  "blackList.txt"; ;
-
-            try
-            {
-                using (StreamReader sr = File.OpenText(path))
-                {
-                    string s = "";
-                    while ((s = sr.ReadLine()) != null)
-                    {
-                        BlackListedWords.Add(s);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-            ;
-        }
-
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e) {
-
-        }
-
-        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e) {
-           if (progressBar1.Visible != true)
-                progressBar1.Visible = true;
-           progressBar1.Value = e.ProgressPercentage;
-        }
-
-        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e) {
-            showResults();
-            progressBar1.Value = 0;
-            progressBar1.Visible = false;
-        }
-
-        private double sumDistance(int pos, List<int> positions) {
-            if (positions.Count != 0) {
-                double sum = 0;
-
-                if (pos == positions.Count - 1)
-                    return sum;
-
-                for (int i = pos + 1; i < positions.Count; i++) {
-                    sum += Math.Abs((double)positions[i] - (double)positions[pos]);
-                }
-
-                double nextSum = sumDistance(pos + 1, positions);
-                if (nextSum == 0.0)
-                    return sum;
-
-                return (sum + nextSum) / 2.0;
-            }
-            return 1.0;
-            
-        }
     }
 }
