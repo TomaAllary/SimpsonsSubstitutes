@@ -163,22 +163,24 @@ namespace TheThingAboutTheSimpsons {
         private void pokemonBtn_Click(object sender, EventArgs e) {
             LoadPokemonsCharactersSet();
             SubstituteCharacters.GroupName = " pokemons";
-
+            whoLb.Text = "The" + SubstituteCharacters.GroupName;
         }
 
         private void button3_Click(object sender, EventArgs e) {
             LoadCharactersSet("southpark.txt");
             SubstituteCharacters.GroupName = " people of southpark";
-
+            whoLb.Text = "The" + SubstituteCharacters.GroupName;
         }
 
         private void button1_Click(object sender, EventArgs e) {
             LoadCharactersSet("futurama.txt");
             SubstituteCharacters.GroupName = " planet express crew";
+            whoLb.Text = "The" + SubstituteCharacters.GroupName;
         }
 
         private void button2_Click(object sender, EventArgs e) {
             LoadCharactersSet("simpsons.txt");
+            whoLb.Text = "The Simpsons";
         }
     }
 }

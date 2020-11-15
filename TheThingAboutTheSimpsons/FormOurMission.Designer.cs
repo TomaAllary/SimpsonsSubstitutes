@@ -31,8 +31,8 @@ namespace TheThingAboutTheSimpsons
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormOurMission));
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,26 +48,26 @@ namespace TheThingAboutTheSimpsons
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(544, 408);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(397, 161);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Impact", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(26, 60);
+            this.label5.Location = new System.Drawing.Point(29, 71);
             this.label5.MaximumSize = new System.Drawing.Size(900, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(892, 345);
-            this.label5.TabIndex = 12;
+            this.label5.Size = new System.Drawing.Size(895, 414);
+            this.label5.TabIndex = 13;
             this.label5.Text = resources.GetString("label5.Text");
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(556, 420);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(397, 161);
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
             // 
             // FormOurMission
             // 
@@ -76,8 +76,8 @@ namespace TheThingAboutTheSimpsons
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(953, 581);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.button1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -94,7 +94,7 @@ namespace TheThingAboutTheSimpsons
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
