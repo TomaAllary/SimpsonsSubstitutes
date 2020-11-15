@@ -69,7 +69,7 @@ namespace TheThingAboutTheSimpsons {
             List<string> listSim = new List<string>();
             string[] longtextSim = System.IO.File.ReadAllLines("simpsons.txt");
             for (int i = 0; i < longtextSim.Length; i++) {
-                listSim.Add(longtextSim[i].Remove(longtextSim[i].IndexOf('\t')).ToLower());
+                listSim.Add(" " + longtextSim[i].Remove(longtextSim[i].IndexOf('\t')).ToLower());
             }
             SimpsonsCharacters.charactersName = listSim;
         }
