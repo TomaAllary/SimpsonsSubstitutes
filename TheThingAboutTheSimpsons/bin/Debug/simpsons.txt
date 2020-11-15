@@ -20,7 +20,7 @@ Patty	Julie Kavner[2]	Twin sister of Selma and older sister of Marge.	"Simpsons 
 Selma	Julie Kavner[2]	Twin sister of Patty and older sister of Marge. Adoptive mother of Ling.	"Simpsons Roasting on an Open Fire"	1989-
 Kent Brockman	Harry Shearer[7]	Channel 6 News anchor.	"Krusty Gets Busted"	1990-
 Bumblebee Man	Hank Azaria[2]	Star of slapstick sketch comedy show on Canal Ocho.	"Itchy & Scratchy: The Movie"	1992-
-Charles Montgomery Burns	Christopher Collins (early season 1), Harry Shearer[7]	Owner of the Springfield Nuclear Power Plant.	"Simpsons Roasting on an Open Fire"	1989-
+Burns	Christopher Collins (early season 1), Harry Shearer[7]	Owner of the Springfield Nuclear Power Plant.	"Simpsons Roasting on an Open Fire"	1989-
 Capital City Goofball	Tom Poston[14]	Mascot of the Capital City Capitals baseball team.[15]	"Dancin' Homer"	1990-
 Carl	Hank Azaria (1990-2020)[2] Alex Désert (2020-present)	Springfield Nuclear Power Plant employee.	"Homer's Night Out"	1990-
 Crazy Cat Lady	Tress MacNeille[10]	Mentally ill owner of many cats. Name revealed as Eleanor Abernathy in "See Homer Run".	"Girly Edition"	1998-
@@ -39,7 +39,7 @@ Duffman	Hank	Azaria[13]	Spokes-mascot for Duff Beer. His real name is Barry Duff
 Eddie and Lou	Harry Shearer[7] and Hank Azaria[2]	Springfield police officers.	"There's No Disgrace Like Home"	1990-01-28
 Fat Tony	Joe Mantegna	Mob boss.	"Bart the Murderer"	1991-10-10
 Maude Flanders	Maggie Roswell[7]	Ned Flanders's wife (dies on Season 11).	"Dead Putting Society"	1990-11-15
-Ned	Harry Shearer [7]	The Simpson family's next door neighbor; owner of The Leftorium (until it closes on Season 29), Bart Simpson's teacher at Springfield Elementary School (Season 29 onwards, substituting the void left by former deceased teacher Edna Krabappel, who was previously married to Flanders from Seasons 23 to 25).[17][18]	"Simpsons Roasting on an Open Fire"	1989-12-17
+ Ned	Harry Shearer [7]	The Simpson family's next door neighbor; owner of The Leftorium (until it closes on Season 29), Bart Simpson's teacher at Springfield Elementary School (Season 29 onwards, substituting the void left by former deceased teacher Edna Krabappel, who was previously married to Flanders from Seasons 23 to 25).[17][18]	"Simpsons Roasting on an Open Fire"	1989-12-17
 Rod	Pamela Hayden[7]	Ned and Maude Flanders's older son.	"The Call of the Simpsons"	1990-02-18
 Todd	Nancy Cartwright[2]	Ned and Maude Flanders's younger son.	"Simpsons Roasting on an Open Fire"	1989-12-17
 Francesca	Maria Grazia Cucinotta[2]	Sideshow Bob's Italian wife.	"The Italian Bob"	2005-12-11
@@ -143,3 +143,5 @@ Rainier Wolfcastle (McBain)	Harry Shearer[7]	Actor; star of McBain films.	"The W
 The Yes Guy	Dan Castellaneta[11]	Service industry.	"Mayored to the Mob"	1998-12-20
 Artie Ziff	Jon Lovitz,[56] Dan Castellaneta[42]	Former billionaire and Marge's prom date.[57]	"The Way We Was"	1991-01-31
 Kearney	Nancy Cartwright[2]
+Mr.Burns	
+sideshow bob	

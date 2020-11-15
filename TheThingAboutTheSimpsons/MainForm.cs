@@ -26,6 +26,9 @@ namespace TheThingAboutTheSimpsons {
 
         public MainForm() {
 
+            LoadSimpsonsCharactersSet();
+            LoadPokemonsCharactersSet();
+
             InitializeComponent();
             ourMission.setMainMenu(this);
             ourMission.setPosition();
@@ -61,36 +64,63 @@ namespace TheThingAboutTheSimpsons {
             episode = episodes[rnd.Next(0, episodes.Count - 1)];
         }
 
-        public void LoadCharactersSet(string setName) {
+        private void LoadSimpsonsCharactersSet() {
+            SimpsonsCharacters = new CharactersSet("Simpsons");
+            List<string> listSim = new List<string>();
+            string[] longtextSim = System.IO.File.ReadAllLines("simpsons.txt");
+            for (int i = 0; i < longtextSim.Length; i++) {
+                listSim.Add(longtextSim[i].Remove(longtextSim[i].IndexOf('\t')).ToLower());
+            }
+            SimpsonsCharacters.charactersName = listSim;
+        }
 
+        public void LoadCharactersSet(string setName) {
+            SubstituteCharacters = new CharactersSet(setName.Substring(0, setName.Length - 5));
+
+            List<string> listSim = new List<string>();
+            string[] longtextSim = System.IO.File.ReadAllLines(setName);
+            for (int i = 0; i < longtextSim.Length; i++) {
+                listSim.Add(longtextSim[i].Remove(longtextSim[i].IndexOf('\t')));
+            }
+            SubstituteCharacters.charactersName = listSim;
+        }
+        public void LoadPokemonsCharactersSet() {
+            SubstituteCharacters = new CharactersSet("Pokemon");
+            List<string> listPok = new List<string>();
+            string[] longtextPok = System.IO.File.ReadAllLines("pokemon.txt");
+            for (int i = 0; i < longtextPok.Length; i++) {
+                longtextPok[i] = longtextPok[i].Remove(0, 12);
+                listPok.Add(longtextPok[i].Remove(longtextPok[i].IndexOf('\t')));
+            }
+            SubstituteCharacters.charactersName = listPok;
         }
 
         private void submitBtn_Click(object sender, EventArgs e) {
             LoadRdmEpisode();
             ChangeCharacters();
+            showEpisode();
         }
 
         public void ChangeCharacters() {
             if (SubstituteCharacters == null)
                 SubstituteCharacters = SimpsonsCharacters;
+            Random rnd = new Random();
 
-            foreach(string name in SimpsonsCharacters.charactersName) {
+            foreach (string name in SimpsonsCharacters.charactersName) {
                 if (episode.summary.Contains(name)) {
                     //random substitute
                     if (!charactersSubdtitutes.ContainsKey(name)) {
-                        Random rnd = new Random();
                         charactersSubdtitutes.Add(name, SubstituteCharacters.charactersName[rnd.Next(0, SubstituteCharacters.charactersName.Count - 1)]);
                     }
-                    episode.summary.Replace(name, charactersSubdtitutes[name]);
+                    episode.summary = episode.summary.Replace(name, charactersSubdtitutes[name]);
 
                 }
                 if (episode.summary.Contains(name + "'s")) {
                     //random substitute
                     if (!charactersSubdtitutes.ContainsKey(name)) {
-                        Random rnd = new Random();
                         charactersSubdtitutes.Add(name, SubstituteCharacters.charactersName[rnd.Next(0, SubstituteCharacters.charactersName.Count - 1)]);
                     }
-                    episode.summary.Replace(name + "'s", charactersSubdtitutes[name] + "'s");
+                    episode.summary = episode.summary.Replace(name + "'s", charactersSubdtitutes[name] + "'s");
 
                 }
             }
@@ -117,6 +147,7 @@ namespace TheThingAboutTheSimpsons {
         }
 
         private void showEpisode() {
+            episodeViewer1.Visible = true;
             episodeViewer1.Title.Text = episode.Title;
             episodeViewer1.episodeNbLb.Text = "Episode #" + episode.EpisodeNb.ToString();
             episodeViewer1.seasonNbLb.Text = "Season #" + episode.Season.ToString();

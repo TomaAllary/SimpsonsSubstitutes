@@ -1,0 +1,151 @@
+001	001.png	Bulbasaur	Grass	Poison	フシギダネ	Fushigidane
+002	002.png	Ivysaur	Grass	Poison	フシギソウ	Fushigisou
+003	003.png	Venusaur	Grass	Poison	フシギバナ	Fushigibana
+004	004.png	Charmander	Fire		ヒトカゲ	Hitokage
+005	005.png	Charmeleon	Fire		リザード	Lizardo
+006	006.png	Charizard	Fire	Flying	リザードン	Lizardon
+007	007.png	Squirtle	Water		ゼニガメ	Zenigame
+008	008.png	Wartortle	Water		カメール	Kameil
+009	009.png	Blastoise	Water		カメックス	Kamex
+010	010.png	Caterpie	Bug		キャタピー	Caterpie
+011	011.png	Metapod	Bug		トランセル	Trancell
+012	012.png	Butterfree	Bug	Flying	バタフリー	Butterfree
+013	013.png	Weedle	Bug	Poison	ビードル	Beedle
+014	014.png	Kakuna	Bug	Poison	コクーン	Cocoon
+015	015.png	Beedrill	Bug	Poison	スピアー	Spear
+016	016.png	Pidgey	Normal	Flying	ポッポ	Poppo
+017	017.png	Pidgeotto	Normal	Flying	ピジョン	Pigeon
+018	018.png	Pidgeot	Normal	Flying	ピジョット	Pigeot
+019	019.png	Rattata	Normal		コラッタ	Koratta
+020	020.png	Raticate	Normal		ラッタ	Ratta
+021	021.png	Spearow	Normal	Flying	オニスズメ	Onisuzume
+022	022.png	Fearow	Normal	Flying	オニドリル	Onidrill
+023	023.png	Ekans	Poison		アーボ	Arbo
+024	024.png	Arbok	Poison		アーボック	Arbok
+025	025.png	Pikachu	Electric		ピカチュウ	Pikachu
+026	026.png	Raichu	Electric		ライチュウ	Raichu
+027	027.png	Sandshrew	Ground		サンド	Sand
+028	028.png	Sandslash	Ground		サンドパン	Sandpan
+029	029.png	Nidoran		Poison		ニドラン♀	Nidoran♀
+030	030.png	Nidorina	Poison		ニドリーナ	Nidorina
+031	031.png	Nidoqueen	Poison	Ground	ニドクイン	Nidoqueen
+032	032.png	Nidoran		Poison		ニドラン♂	Nidoran♂
+033	033.png	Nidorino	Poison		ニドリーノ	Nidorino
+034	034.png	Nidoking	Poison	Ground	ニドキング	Nidoking
+035	035.png	Clefairy	Fairy[1]		ピッピ	Pippi
+036	036.png	Clefable	Fairy[2]		ピクシー	Pixy
+037	037.png	Vulpix	Fire		ロコン	Rokon
+038	038.png	Ninetales	Fire		キュウコン	Kyukon
+039	039.png	Jigglypuff	Normal	Fairy[3]	プリン	Purin
+040	040.png	Wigglytuff	Normal	Fairy[4]	プクリン	Pukurin
+041	041.png	Zubat	Poison	Flying	ズバット	Zubat
+042	042.png	Golbat	Poison	Flying	ゴルバット	Golbat
+043	043.png	Oddish	Grass	Poison	ナゾノクサ	Nazonokusa
+044	044.png	Gloom	Grass	Poison	クサイハナ	Kusaihana
+045	045.png	Vileplume	Grass	Poison	ラフレシア	Ruffresia
+046	046.png	Paras	Bug	Grass	パラス	Paras
+047	047.png	Parasect	Bug	Grass	パラセクト	Parasect
+048	048.png	Venonat	Bug	Poison	コンパン	Kongpang
+049	049.png	Venomoth	Bug	Poison	モルフォン	Morphon
+050	050.png	Diglett	Ground		ディグダ	Digda
+051	051.png	Dugtrio	Ground		ダグトリオ	Dugtrio
+052	052.png	Meowth	Normal		ニャース	Nyarth
+053	053.png	Persian	Normal		ペルシアン	Persian
+054	054.png	Psyduck	Water		コダック	Koduck
+055	055.png	Golduck	Water		ゴルダック	Golduck
+056	056.png	Mankey	Fighting		マンキー	Mankey
+057	057.png	Primeape	Fighting		オコリザル	Okorizaru
+058	058.png	Growlithe	Fire		ガーディ	Gardie
+059	059.png	Arcanine	Fire		ウインディ	Windie
+060	060.png	Poliwag	Water		ニョロモ	Nyoromo
+061	061.png	Poliwhirl	Water		ニョロゾ	Nyorozo
+062	062.png	Poliwrath	Water	Fighting	ニョロボ	Nyorobon
+063	063.png	Abra	Psychic		ケーシィ	Casey
+064	064.png	Kadabra	Psychic		ユンゲラー	Yungerer
+065	065.png	Alakazam	Psychic		フーディン	Foodin
+066	066.png	Machop	Fighting		ワンリキー	Wanriky
+067	067.png	Machoke	Fighting		ゴーリキー	Goriky
+068	068.png	Machamp	Fighting		カイリキー	Kairiky
+069	069.png	Bellsprout	Grass	Poison	マダツボミ	Madatsubomi
+070	070.png	Weepinbell	Grass	Poison	ウツドン	Utsudon
+071	071.png	Victreebel	Grass	Poison	ウツボット	Utsubotto
+072	072.png	Tentacool	Water	Poison	メノクラゲ	Menokurage
+073	073.png	Tentacruel	Water	Poison	ドククラゲ	Dokukurage
+074	074.png	Geodude	Rock	Ground	イシツブテ	Ishitsubute
+075	075.png	Graveler	Rock	Ground	ゴローン	Golone
+076	076.png	Golem	Rock	Ground	ゴローニャ	Golonya
+077	077.png	Ponyta	Fire		ポニータ	Ponyta
+078	078.png	Rapidash	Fire		ギャロップ	Gallop
+079	079.png	Slowpoke	Water	Psychic	ヤドン	Yadon
+080	080.png	Slowbro	Water	Psychic	ヤドラン	Yadoran
+081	081.png	Magnemite	Electric	Steel[5]	コイル	Coil
+082	082.png	Magneton	Electric	Steel[6]	レアコイル	Rarecoil
+083	083.png	Farfetch'd	Normal	Flying	カモネギ	Kamonegi
+084	084.png	Doduo	Normal	Flying	ドードー	Dodo
+085	085.png	Dodrio	Normal	Flying	ドードリオ	Dodorio
+086	086.png	Seel	Water		パウワウ	Pawou
+087	087.png	Dewgong	Water	Ice	ジュゴン	Jugon
+088	088.png	Grimer	Poison		ベトベター	Betbeter
+089	089.png	Muk	Poison		ベトベトン	Betbeton
+090	090.png	Shellder	Water		シェルダー	Shellder
+091	091.png	Cloyster	Water	Ice	パルシェン	Parshen
+092	092.png	Gastly	Ghost	Poison	ゴース	Ghos
+093	093.png	Haunter	Ghost	Poison	ゴースト	Ghost
+094	094.png	Gengar	Ghost	Poison	ゲンガー	Gangar
+095	095.png	Onix	Rock	Ground	イワーク	Iwark
+096	096.png	Drowzee	Psychic		スリープ	Sleep
+097	097.png	Hypno	Psychic		スリーパー	Sleeper
+098	098.png	Krabby	Water		クラブ	Crab
+099	099.png	Kingler	Water		キングラー	Kingler
+100	100.png	Voltorb	Electric		ビリリダマ	Biriridama
+101	101.png	Electrode	Electric		マルマイン	Marumine
+102	102.png	Exeggcute	Grass	Psychic	タマタマ	Tamatama
+103	103.png	Exeggutor	Grass	Psychic	ナッシー	Nassy
+104	104.png	Cubone	Ground		カラカラ	Karakara
+105	105.png	Marowak	Ground		ガラガラ	Garagara
+106	106.png	Hitmonlee	Fighting		サワムラー	Sawamular
+107	107.png	Hitmonchan	Fighting		エビワラー	Ebiwalar
+108	108.png	Lickitung	Normal		ベロリンガ	Beroringa
+109	109.png	Koffing	Poison		ドガース	Dogars
+110	110.png	Weezing	Poison		マタドガス	Matadogas
+111	111.png	Rhyhorn	Ground	Rock	サイホーン	Saihorn
+112	112.png	Rhydon	Ground	Rock	サイドン	Sidon
+113	113.png	Chansey	Normal		ラッキー	Lucky
+114	114.png	Tangela	Grass		モンジャラ	Monjara
+115	115.png	Kangaskhan	Normal		ガルーラ	Garura
+116	116.png	Horsea	Water		タッツー	Tattu
+117	117.png	Seadra	Water		シードラ	Seadra
+118	118.png	Goldeen	Water		トサキント	Tosakinto
+119	119.png	Seaking	Water		アズマオウ	Azumao
+120	120.png	Staryu	Water		ヒトデマン	Hitodeman
+121	121.png	Starmie	Water	Psychic	スターミー	Starmie
+122	122.png	Mr. Mime	Psychic	Fairy[7]	バリヤード	Barrierd
+123	123.png	Scyther	Bug	Flying	ストライク	Strike
+124	124.png	Jynx	Ice	Psychic	ルージュラ	Rougela
+125	125.png	Electabuzz	Electric		エレブー	Eleboo
+126	126.png	Magmar	Fire		ブーバー	Boober
+127	127.png	Pinsir	Bug		カイロス	Kailios
+128	128.png	Tauros	Normal		ケンタロス	Kentauros
+129	129.png	Magikarp	Water		コイキング	Koiking
+130	130.png	Gyarados	Water	Flying	ギャラドス	Gyarados
+131	131.png	Lapras	Water	Ice	ラプラス	Laplace
+132	132.png	Ditto	Normal		メタモン	Metamon
+133	133.png	Eevee	Normal		イーブイ	Eievui
+134	134.png	Vaporeon	Water		シャワーズ	Showers
+135	135.png	Jolteon	Electric		サンダース	Thunders
+136	136.png	Flareon	Fire		ブースター	Booster
+137	137.png	Porygon	Normal		ポリゴン	Porygon
+138	138.png	Omanyte	Rock	Water	オムナイト	Omnite
+139	139.png	Omastar	Rock	Water	オムスター	Omstar
+140	140.png	Kabuto	Rock	Water	カブト	Kabuto
+141	141.png	Kabutops	Rock	Water	カブトプス	Kabutops
+142	142.png	Aerodactyl	Rock	Flying	プテラ	Ptera
+143	143.png	Snorlax	Normal		カビゴン	Kabigon
+144	144.png	Articuno	Ice	Flying	フリーザー	Freezer
+145	145.png	Zapdos	Electric	Flying	サンダー	Thunder
+146	146.png	Moltres	Fire	Flying	ファイヤー	Fire
+147	147.png	Dratini	Dragon		ミニリュウ	Miniryu
+148	148.png	Dragonair	Dragon		ハクリュー	Hakuryu
+149	149.png	Dragonite	Dragon	Flying	カイリュー	Kairyu
+150	150.png	Mewtwo	Psychic		ミュウツー	Mewtwo
+151	151.png	Mew	Psychic		ミュウ	Mew
