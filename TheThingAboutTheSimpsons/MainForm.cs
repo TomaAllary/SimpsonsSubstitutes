@@ -14,6 +14,8 @@ namespace TheThingAboutTheSimpsons {
         private FormAboutUs aboutUs = new FormAboutUs();
         private FormOurMission ourMission = new FormOurMission();
 
+        Dictionary<string, string> charactersSubdtitutes = new Dictionary<string, string>();
+
         Episode episode;
         private int episodeIt;
         private Point position = new Point();
@@ -47,10 +49,7 @@ namespace TheThingAboutTheSimpsons {
                 }
                 else {
                     //Console.WriteLine(line);
-                    string[] split = line.Split(new Char[] { ' ', '(', ')', ',', '.', '\r', '\t' }, StringSplitOptions.RemoveEmptyEntries);
-                    if (split[0] != "notes:" && split[0] != "note:" && split[0] != "note " && split[0] != "notes ") {
-                        episodes[it].summary = split;
-                    }
+                    episodes[it].summary = line;
                 }
                 text = text.Remove(0, text.IndexOf('\n') + 1);
             }
@@ -59,6 +58,9 @@ namespace TheThingAboutTheSimpsons {
             episode = episodes[rnd.Next(0, episodes.Count)];
         }
 
+        public void LoadCharactersSet(string setName) {
+
+        }
 
         private void submitBtn_Click(object sender, EventArgs e) {
             LoadRdmEpisode();
