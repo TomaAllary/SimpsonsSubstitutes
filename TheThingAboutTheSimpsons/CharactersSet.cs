@@ -8,6 +8,7 @@ namespace TheThingAboutTheSimpsons {
     public class CharactersSet {
         public string SetName { get; set;}
         public List<string> charactersName = new List<string>();
+        public string GroupName { get; set; }
         public CharactersSet(string setName) {
             SetName = setName;
         }

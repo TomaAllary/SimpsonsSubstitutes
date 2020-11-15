@@ -27,7 +27,7 @@ namespace TheThingAboutTheSimpsons {
         public MainForm() {
 
             LoadSimpsonsCharactersSet();
-            LoadPokemonsCharactersSet();
+            LoadCharactersSet("southpark.txt");
 
             InitializeComponent();
             ourMission.setMainMenu(this);
@@ -37,6 +37,7 @@ namespace TheThingAboutTheSimpsons {
         }
 
         public void LoadRdmEpisode() {
+            charactersSubdtitutes.Clear();
             string text = System.IO.File.ReadAllText("summaries.txt");
             List<Episode> episodes = new List<Episode>();
 
@@ -55,7 +56,7 @@ namespace TheThingAboutTheSimpsons {
                 }
                 else {
                     //Console.WriteLine(line);
-                    episodes[it].summary = line;
+                    episodes[it].summary = " " + line;
                 }
                 text = text.Remove(0, text.IndexOf('\n') + 1);
             }
@@ -80,7 +81,7 @@ namespace TheThingAboutTheSimpsons {
             List<string> listSim = new List<string>();
             string[] longtextSim = System.IO.File.ReadAllLines(setName);
             for (int i = 0; i < longtextSim.Length; i++) {
-                listSim.Add(longtextSim[i].Remove(longtextSim[i].IndexOf('\t')));
+                listSim.Add(" " + longtextSim[i].Remove(longtextSim[i].IndexOf('\t')));
             }
             SubstituteCharacters.charactersName = listSim;
         }
@@ -90,7 +91,7 @@ namespace TheThingAboutTheSimpsons {
             string[] longtextPok = System.IO.File.ReadAllLines("pokemon.txt");
             for (int i = 0; i < longtextPok.Length; i++) {
                 longtextPok[i] = longtextPok[i].Remove(0, 12);
-                listPok.Add(longtextPok[i].Remove(longtextPok[i].IndexOf('\t')));
+                listPok.Add(" " + longtextPok[i].Remove(longtextPok[i].IndexOf('\t')));
             }
             SubstituteCharacters.charactersName = listPok;
         }
@@ -108,12 +109,16 @@ namespace TheThingAboutTheSimpsons {
 
             foreach (string name in SimpsonsCharacters.charactersName) {
                 if (episode.summary.Contains(name)) {
-                    //random substitute
-                    if (!charactersSubdtitutes.ContainsKey(name)) {
-                        charactersSubdtitutes.Add(name, SubstituteCharacters.charactersName[rnd.Next(0, SubstituteCharacters.charactersName.Count - 1)]);
+                    if ((name == " simpsons" || name == " simpson family") && SubstituteCharacters.GroupName != null) {
+                        episode.summary = episode.summary.Replace(name, SubstituteCharacters.GroupName);
                     }
-                    episode.summary = episode.summary.Replace(name, charactersSubdtitutes[name]);
-
+                    else {
+                        //random substitute
+                        if (!charactersSubdtitutes.ContainsKey(name)) {
+                            charactersSubdtitutes.Add(name, SubstituteCharacters.charactersName[rnd.Next(0, SubstituteCharacters.charactersName.Count - 1)]);
+                        }
+                        episode.summary = episode.summary.Replace(name, charactersSubdtitutes[name]);
+                    }
                 }
                 if (episode.summary.Contains(name + "'s")) {
                     //random substitute
@@ -155,7 +160,25 @@ namespace TheThingAboutTheSimpsons {
             episodeViewer1.summaryLb.Text = episode.summary;
         }
 
+        private void pokemonBtn_Click(object sender, EventArgs e) {
+            LoadPokemonsCharactersSet();
+            SubstituteCharacters.GroupName = " pokemons";
 
+        }
 
+        private void button3_Click(object sender, EventArgs e) {
+            LoadCharactersSet("southpark.txt");
+            SubstituteCharacters.GroupName = " people of southpark";
+
+        }
+
+        private void button1_Click(object sender, EventArgs e) {
+            LoadCharactersSet("futurama.txt");
+            SubstituteCharacters.GroupName = " planet express crew";
+        }
+
+        private void button2_Click(object sender, EventArgs e) {
+            LoadCharactersSet("simpsons.txt");
+        }
     }
 }
