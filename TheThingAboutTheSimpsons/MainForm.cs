@@ -14,17 +14,12 @@ namespace TheThingAboutTheSimpsons {
         private FormAboutUs aboutUs = new FormAboutUs();
         private FormOurMission ourMission = new FormOurMission();
 
-        private List<Word> Sentence = new List<Word>();
-        private List<string> BlackListedWords = new List<string>();
-        private int lastProgress = 0;
-
-        private List<Episode> episodesFounds;
+        Episode episode;
         private int episodeIt;
         private Point position = new Point();
-        List<Episode> episodes = new List<Episode>();
+        
 
         public MainForm() {
-            LoadEpisodes();
 
             InitializeComponent();
             ourMission.setMainMenu(this);
@@ -33,21 +28,44 @@ namespace TheThingAboutTheSimpsons {
             aboutUs.setPosition();
         }
 
-        private void submitBtn_Click(object sender, EventArgs e) {
-            //Clear last search
-            episodesFounds = null;
-            Sentence.Clear();
-            lastProgress = 0;
+        public void LoadRdmEpisode() {
+            string text = System.IO.File.ReadAllText("summaries.txt");
+            List<Episode> episodes = new List<Episode>();
 
-            foreach(string s in textInput.Text.Split(' '))
-            {
-                if (!BlackListedWords.Contains(s.ToLower())) {
-                    Word word = new Word(s, false);
-                    Sentence.Add(word);
+            text = text.ToLower();
+            int it = -1;
+            while (text != "") {
+                string line = text.Substring(0, text.IndexOf('\n'));
+                if (line.Contains('#')) {
+                    it++;
+
+                    var i = line.IndexOf('#');
+                    string epName = line.Substring(0, i - 2);
+                    string date = line.Substring(line.IndexOf('\t') + 1).TrimEnd('\r');
+
+                    episodes.Add(new Episode(epName, date, it + 1));
                 }
+                else {
+                    //Console.WriteLine(line);
+                    string[] split = line.Split(new Char[] { ' ', '(', ')', ',', '.', '\r', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                    if (split[0] != "notes:" && split[0] != "note:" && split[0] != "note " && split[0] != "notes ") {
+                        episodes[it].summary = split;
+                    }
+                }
+                text = text.Remove(0, text.IndexOf('\n') + 1);
             }
 
-            backgroundWorker1.RunWorkerAsync();
+            Random rnd = new Random();
+            episode = episodes[rnd.Next(0, episodes.Count)];
+        }
+
+
+        private void submitBtn_Click(object sender, EventArgs e) {
+            LoadRdmEpisode();
+        }
+
+        public void SubtitutesCharacters() {
+
         }
 
         private void aboutUsBtn_Click(object sender, EventArgs e)
@@ -69,46 +87,7 @@ namespace TheThingAboutTheSimpsons {
             position.Y = lastForm.Location.Y;
             this.Location = position;
         }
-        public void LoadEpisodes() {
-            string text = System.IO.File.ReadAllText("summaries.txt");
-            /*List<string> epDate = new List<string>();
-            List<string[]> epWords = new List<string[]>();*/
 
-            text = text.ToLower();
-            int it = -1;
-            while (text != "") {
-                string line = text.Substring(0, text.IndexOf('\n'));
-                if (line.Contains('#')) {
-                    it++;
-                    
-                    var i = line.IndexOf('#');
-                    string epName = line.Substring(0, i - 2);
-                    string date = line.Substring(line.IndexOf('\t') + 1).TrimEnd('\r');
-
-                    episodes.Add(new Episode(epName, date, it + 1));
-                }
-                else {
-                    //Console.WriteLine(line);
-                    string[] split = line.Split(new Char[] { ' ', '(', ')', ',', '.', '\r', '\t' }, StringSplitOptions.RemoveEmptyEntries);
-                    if (split[0] != "notes:" && split[0] != "note:" && split[0] != "note " && split[0] != "notes ") {
-                        episodes[it].summary = split;
-                    }
-                }
-                text = text.Remove(0, text.IndexOf('\n') + 1);
-            }
-            int a = 0; //useless
-            ;
-
-            /*
-            test.Add("foo");
-            test.Add("bar");
-            
-            epWords.Add(test);
-            Console.WriteLine(epWords[0][0]); //prints "foo"
-            Console.WriteLine(epWords[0][1]); // prints "bar"
-            while (true) ;
-            */
-        }
         public void showResults() {
             
 
@@ -182,73 +161,7 @@ namespace TheThingAboutTheSimpsons {
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e) {
-            BackgroundWorker worker = sender as BackgroundWorker;
-            worker.WorkerReportsProgress = true;
 
-            foreach(Episode ep in episodes) {
-                ep.Score = 0;
-            }
-
-            episodesFounds = new List<Episode>();
-
-            //do the thing
-            int epNb = 0;
-            foreach (Episode ep in episodes) {
-                List<int> positionList = new List<int>();
-                List<string> differentWordsChosen = new List<string>();
-
-                int progress = (int)(((double)epNb / (double)episodes.Count) * 100.0);
-                if (lastProgress < progress) {
-                    worker.ReportProgress(progress);
-                    lastProgress = progress;
-                }
-
-                foreach (Word w in Sentence) {
-                    bool wordFound = false;
-
-                    for (int i = 0; i < ep.summary.Length && !wordFound; i++) {
-                        string resumeW = ep.summary[i];
-                        //compare the input word with the resume words
-                        if (w.word == resumeW && !BlackListedWords.Contains(w.word)) {
-                            if (!positionList.Contains(i) && !differentWordsChosen.Contains(w.word)) {
-                                ep.Score += w.Score;
-                                positionList.Add(i);
-                                differentWordsChosen.Add(w.word);
-                                wordFound = true;
-                            }
-                        }
-                    }
-                    foreach (Word syn in w.listSynonyms) {
-                        //compare the input word synonyms with the resume words
-                        for (int i = 0; i < ep.summary.Length && !wordFound; i++) {
-                            string resumeW = ep.summary[i];
-                            if (syn.word == resumeW && !BlackListedWords.Contains(syn.word)) {
-                                if (!positionList.Contains(i) && !differentWordsChosen.Contains(syn.word)) {
-                                    ep.Score += syn.Score;
-                                    positionList.Add(i);
-                                    differentWordsChosen.Add(syn.word);
-                                    wordFound = true;
-                                }
-
-                            }
-                        }
-                        if (wordFound)
-                            break;
-                    }
-                }
-
-                double avgDist = sumDistance(0, positionList);
-
-                //ep.Score *= (1.0 / avgDist);
-
-                //Seuil
-                if (ep.Score > 4) {
-                    ep.wordsChosen = positionList;
-                    episodesFounds.Add(ep);
-                }
-                epNb++;
-
-            }
         }
 
         private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e) {

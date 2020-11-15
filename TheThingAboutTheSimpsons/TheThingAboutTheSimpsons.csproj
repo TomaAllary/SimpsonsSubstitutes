@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CharactersSet.cs" />
     <Compile Include="Episode.cs" />
     <Compile Include="FormAboutUs.cs">
       <SubType>Form</SubType>
@@ -73,7 +74,6 @@
     <Compile Include="EpisodeViewer.Designer.cs">
       <DependentUpon>EpisodeViewer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Word.cs" />
     <EmbeddedResource Include="EpisodeViewer.resx">
       <DependentUpon>EpisodeViewer.cs</DependentUpon>
     </EmbeddedResource>
